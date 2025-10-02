@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+a{
+  border-radius: 5px;
+  background-color: #3798c9;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px 10px;
+
+  &:hover{
+    border-radius: 5px;
+    background-color: #003267;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+}

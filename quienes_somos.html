@@ -32,38 +32,36 @@
 
 <body>
   <header>
-    <center>
       <div class="container">
           <hr>
-          <nav>
-                | <a href="index.html">Home</a> |
-                | <strong>Quiénes Somos</strong> |
-                | <a href="cursos.html">Cursos</a> |
-                | <a href="blogs.html">Blogs</a> |
-                | <a href="registro.html">Registro</a> |
-                | <a href="login.html">Login</a> |
-                | <a href="contacto.html">Contacto</a> |
-              </ul>
-          </nav>
+          <picture>
+            <source srcset="img/common/conquer_devs_mob.png" height="150px" media="(max-width:600px)">
+              <img id="logo" src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+          </picture>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <nav id="main-nav" class="collapse">
+              <a href="index.html">Home</a>
+              <a href="cursos.html">Cursos</a>
+              <a href="blogs.html">Blogs</a>
+              <a href="registro.html">Registro</a>
+              <a href="login.html">Login</a>
+              <a href="contacto.html">Contacto</a>
+            </nav>
           <hr>
       </div>
       <h1>¿Quienes somos?</h1>
-      <picture>
-        <source srcset="img/common/conquer_devs_mob.png" height="150px" media="(max-width:600px)">
-         <img src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="150px">
-      </picture>
-    </center>
   </header>
     <sector>
-      <center>
         <h2>Tu futuro comienza aquí.</h2>
         <p>
         Conquer Devs es más que una academia de programación; somos tu compañero en el emocionante viaje hacia el dominio de la tecnología. <br>
         Nuestra misión es empoderarte con las habilidades necesarias para convertirte en un desarrollador exitoso y dar forma al futuro digital.        
-        </p>          
-      </center>
+        </p>
     </sector>
-    <center>
       <sector>
         <h2>¿Por qué elegir Conquer Devs?</h2>
         <dl>
@@ -103,10 +101,8 @@
         </p>
         <br>
       </sector>
-    </center>
   </main> 
   <footer>
-    <center>
       <div class="container">
           <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
             <img src="icons/icon.png" alt="Conquer Devs Icon" height="22">
@@ -114,8 +110,15 @@
           <nav>
             <a href="aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

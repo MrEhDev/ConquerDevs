@@ -20,35 +20,38 @@
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "96x96"  href= "../icons/favicon-96x96.png" > 
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "16x16"  href= "../icons/favicon-16x16.png" > 
   <link  rel= "manifiesto"  href= "/manifiesto.json" > 
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
   <meta  nombre= "msapplication-TileColor"  contenido= "#fafafa" > 
   <meta  nombre= "msapplication-TileImage"  contenido= "../icons/ms-icon-144x144.png" > 
 </head>
 
 <body>
   <header>
-    <center>
       <div class="container">
           <hr>
           <picture>
-            <source srcset="../img/common/conquer_devs_mob.png" height="120px" media="(max-width:600px)">
-             <img src="../img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
-          </picture><nav>
-                | <a href="../index.html">Home</a> |
-                | <a href="../quienes-somos.html">Quiénes Somos</a> |
-                | <a href="../cursos.html">Cursos</a> |
-                | <a href="../blog.html">Blog</a> |
-                | <a href="../registro.html">Registro</a> |
-                | <a href="../login.html">Login</a> |
-                | <a href="../contacto.html">Contacto</a> |
-              </ul>
-          </nav>
+            <source srcset="/img/common/conquer_devs_mob.png" height="150px" media="(max-width:600px)">
+              <img id="logo" src="/img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+          </picture>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <nav id="main-nav" class="collapse">
+              <a href="/index.html">Home</a>
+              <a href="/cursos.html">Cursos</a>
+              <a href="/blogs.html">Blogs</a>
+              <a href="/registro.html">Registro</a>
+              <a href="/login.html">Login</a>
+              <a href="/contacto.html">Contacto</a>
+            </nav>
           <hr>
       </div>
         <h1>Curso de Programación de Realidad Virtual y Aumentada</h1>
-    </center>
   </header>
   <main>
-    <center>
       <article>
         <picture>
           <source srcset="../img/cursos/curso-vr_mob.png" width="80%" media="(max-width:600px)">
@@ -57,10 +60,9 @@
         <h2>¡Crea experiencias inmersivas que cambien el mundo!</h2>
         <p>Sumérgete en el fascinante mundo de la realidad virtual y aumentada y aprende a desarrollar aplicaciones innovadoras que revolucionarán la forma en que interactuamos con el mundo digital.</p>        
       </article>
-    </center>
     <section>
       <h2>¿Qué aprenderás?</h2>
-      <dl>
+      <dl class="definiciones">
           <dt><strong>Fundamentos de RV y RA</strong></dt> 
             <dd> Entenderás los conceptos básicos de realidad virtual y aumentada, sus diferencias y aplicaciones.</dd>
           <dt><strong>Desarrollo de aplicaciones 3D:</strong></dt>
@@ -74,14 +76,12 @@
           <dt><strong>Tendencias y futuro:</strong></dt>
             <dd> Estarás al día de las últimas tendencias y aplicaciones de la RV y RA en diversos sectores como el entretenimiento, la educación y la industria.</dd>
       </dl>      
-    </section>   
-    <center>
+    </section>
       <picture>
         <source srcset="../img/cursos/curso-vr-2_mob.png"  width="80%" media="(max-width:600px)">
         <img src="../img/cursos/curso-vr-2.png" alt="" width="500">
-      </picture>      
-    </center>
-    <section>
+      </picture>
+    <section class="detalles">
       <h2>¿Para quién es este curso?</h2>
       <ul>
         <li><strong>Desarrolladores de videojuegos:</strong> Quienes quieran crear experiencias de juego más inmersivas y realistas.</li>
@@ -89,7 +89,7 @@
         <li><strong>Estudiantes de carreras técnicas:</strong>Ingenieros informáticos, diseñadores industriales y estudiantes de nuevas tecnologías.</li>
       </ul>      
     </section>
-    <section>
+    <section class="detalles">
       <h2>Detalles del curso:</h2>
       <ul>
         <li><strong>Duración:</strong> 10 semanas</li>
@@ -99,7 +99,7 @@
         <li><strong>Tutorías personalizadas:</strong> Tendrás acceso a tutorías personalizadas con nuestros profesores expertos para resolver tus dudas y recibir feedback sobre tu progreso.</li>
       </ul>      
     </section>
-    <section>
+    <section class="detalles">
       <h2>Incluye:</h2>
       <ul>
         <li>Acceso a la plataforma de aprendizaje online 24/7.</li>
@@ -108,15 +108,13 @@
         <li>Comunidad de estudiantes para compartir conocimientos y experiencias.</li>
       </ul>      
     </section>
-    <center>
+    <div class="center">
       <strong>¡Inscríbete ahora y da vida a tus ideas más creativas!</strong><br>
-      <a href="../registro.html">Concerta tu reunión informativa aquí</a>
-      <br>
-      <a href="../cursos.html">Volver</a>
-    </center> 
+      <a class="reunion" href="../registro.html">Concerta tu reunión informativa aquí</a>
+    </div>
+      <a class="volver" href="../cursos.html">Volver</a>
   </main> 
   <footer>
-    <center>
       <div class="container">
           <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
             <img src="../icons/icon.png" alt="Conquer Devs Icon" height="22">
@@ -124,10 +122,15 @@
           <nav>
             <a href="../aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
-
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
-
 </html>

@@ -32,22 +32,24 @@
 
 <body>
   <header>
-    <center>
       <div class="container">
           <hr>
           <picture>
             <source srcset="img/common/conquer_devs_mob.png" height="120px" media="(max-width:600px)">
-             <img src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
-          </picture>
-          <nav>
-                | <strong>Home</strong> |
-                | <a href="quienes_somos.html">Quiénes Somos</a> |
-                | <a href="cursos.html">Cursos</a> |
-                | <a href="blogs.html">Blogs</a> |
-                | <a href="registro.html">Registro</a> |
-                | <a href="login.html">Login</a> |
-                | <a href="contacto.html">Contacto</a> |
-              </ul>
+            <img id="logo" src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+          </picture> 
+          <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav id="main-nav" class="collapse">
+            <a href="quienes_somos.html">Quiénes Somos</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="registro.html">Registro</a>
+            <a href="login.html">Login</a>
+            <a href="contacto.html">Contacto</a>
           </nav>
           <hr>
       </div>
@@ -55,14 +57,12 @@
         <h1>Tu futuro comienza aquí</h1>
         <p>Aprende a programar con los mejores cursos y mentores.</p>  
       </section>
-    </center>
   </header>
   <main>
-    <center>
       <!--Quienes somos-->
       <section>
         <h2>¿Quiénes somos?</h2>
-        <p>Somos una academia de programación dedicada a empoderar a personas de todas las edades y orígenes <br> para que desarrollen las habilidades necesarias para triunfar en el mundo digital.</p>
+        <p>Somos una academia de programación dedicada a empoderar a personas de todas las edades y orígenes para que desarrollen las habilidades necesarias para triunfar en el mundo digital.</p>
         <figure>
           <picture>
             <source srcset="img/quienes_somos_mob.png" media="(max-width:600px)">
@@ -93,7 +93,8 @@
           </picture> <br>
           <a href="cursos/curso_ia_salud.html">Ver más</a>
         </div>
-        <a href="cursos.html">Descubre todos nuestros cursos</a>
+        <br>
+        <a href="cursos.html" id="cursos">Descubre todos nuestros cursos</a>
       </section>
       <!--Últimas noticias-->
       <section>
@@ -106,6 +107,7 @@
             <p>¡Estamos exultantes de anunciar que Conquer Devs ha sido galardonada con el prestigioso premio BETT Awards! <br>
               Este reconocimiento internacional es un hito en nuestra trayectoria y un testimonio de nuestro incansable <br>
               compromiso por revolucionar la forma en que las personas aprenden a programar.
+              <br>
             <a href="blogs/blog_premio_bett.html">Ver noticia</a>            
             </p>
         </article>
@@ -117,25 +119,32 @@
           </picture><br>
           <p>¡Conquer Devs está dando un salto cuántico en la educación tecnológica! <br>
             A partir de ahora, podrás aprender a programar de forma más inmersiva y divertida gracias a nuestras nuevas clases en vivo en realidad virtual.
+            <br>
           <a href="blogs/blog_clases_vr.html">Ver noticia</a></p>
           <nav>
           <a href="blogs.html">Ver todas las noticias</a>            
           </nav>
       </section>
-    </center>    
   </main> 
   <footer>
-    <center>
       <div>
+        <hr>
           <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
             <img src="icons/icon.png" alt="Conquer Devs Icon" height="22">
           </p>
           <nav>
             <a href="aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>

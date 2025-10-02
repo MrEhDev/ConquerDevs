@@ -20,35 +20,38 @@
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "96x96"  href= "../icons/favicon-96x96.png" > 
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "16x16"  href= "../icons/favicon-16x16.png" > 
   <link  rel= "manifiesto"  href= "/manifiesto.json" > 
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
   <meta  nombre= "msapplication-TileColor"  contenido= "#fafafa" > 
   <meta  nombre= "msapplication-TileImage"  contenido= "../icons/ms-icon-144x144.png" > 
 </head>
 
 <body>
   <header>
-    <center>
-      <div>
+      <div class="container">
           <hr>
           <picture>
-            <source srcset="../img/common/conquer_devs_mob.png" height="120px" media="(max-width:600px)">
-             <img src="../img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
-          </picture><nav>
-                | <a href="../index.html">Home</a> |
-                | <a href="../quienes-somos.html">Quiénes Somos</a> |
-                | <a href="../cursos.html">Cursos</a> |
-                | <a href="../blog.html">Blog</a> |
-                | <a href="../registro.html">Registro</a> |
-                | <a href="../login.html">Login</a> |
-                | <a href="../contacto.html">Contacto</a> |
-              </ul>
-          </nav>
+            <source srcset="/img/common/conquer_devs_mob.png" height="150px" media="(max-width:600px)">
+              <img id="logo" src="/img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+          </picture>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <nav id="main-nav" class="collapse">
+              <a href="/index.html">Home</a>
+              <a href="/cursos.html">Cursos</a>
+              <a href="/blogs.html">Blogs</a>
+              <a href="/registro.html">Registro</a>
+              <a href="/login.html">Login</a>
+              <a href="/contacto.html">Contacto</a>
+            </nav>
           <hr>
       </div>
         <h1>Curso de Programación de Microcontroladores</h1>
-    </center>
   </header>
   <main>
-    <center>
       <article>
         <picture>
           <source srcset="../img/cursos/microcontroladores_mob.png" width="80%"  media="(max-width:600px)">
@@ -57,10 +60,9 @@
         <h2>¡Domina el hardware y crea dispositivos inteligentes!</h2>
         <p>Aprende a programar microcontroladores y da vida a tus proyectos electrónicos. Desde robots hasta sistemas domóticos, las posibilidades son infinitas.</p>
       </article>
-    </center>
     <section>
       <h2>¿Qué aprenderás?</h2>
-      <dl>
+      <dl class="definiciones">
           <dt><strong>Arquitectura de microcontroladores:</strong></dt> 
             <dd> Entenderás la estructura interna de los microcontroladores y cómo funcionan.</dd>
           <dt><strong>Lenguajes de programación:</strong></dt>
@@ -72,14 +74,12 @@
           <dt><strong>IoT:</strong></dt>
             <dd> Explorarás las posibilidades del Internet de las Cosas y cómo conectar tus dispositivos a la nube.</dd>
       </dl>      
-    </section>   
-    <center>
+    </section>
       <picture>
         <source srcset="../img/cursos/microcontroladores2_mob.png"  width="80%" media="(max-width:600px)">
         <img src="../img/cursos/microcontroladores2.png" width="500">
-      </picture>      
-    </center>
-    <section>
+      </picture>
+    <section class="detalles">
       <h2>¿Para quién es este curso?</h2>
       <ul>
         <li><strong>Ingenieros electrónicos:</strong> Quienes deseen profundizar en el diseño y programación de sistemas embebidos.  </li>
@@ -88,7 +88,7 @@
         <li><strong>Emprendedores: </strong>Quienes deseen desarrollar productos electrónicos innovadores.</li>
       </ul>      
     </section>
-    <section>
+    <section class="detalles">
       <h2>Detalles del curso:</h2>
       <ul>
         <li><strong>Duración:</strong> 8 semanas</li>
@@ -99,7 +99,7 @@
         <li><strong>Tutorías personalizadas:</strong>  Tendrás acceso a tutorías personalizadas con nuestros profesores expertos para resolver tus dudas y recibir feedback sobre tu progreso.</li>
       </ul>      
     </section>
-    <section>
+    <section class="detalles">
       <h2>Incluye:</h2>
       <ul>
         <li>Acceso a la plataforma de aprendizaje online 24/7.</li>
@@ -108,15 +108,14 @@
         <li>Comunidad de estudiantes para compartir conocimientos y experiencias.</li>
       </ul>      
     </section>
-    <center>
-      <strong>¡Desata tu creatividad y construye tus propios dispositivos inteligentes!</strong><br>
-      <a href="../registro.html">Concerta tu reunión informativa aquí</a>
-      <br>
-      <a href="../cursos.html">Volver</a>
-    </center> 
+      <div class="center">
+        <strong>¡Desata tu creatividad y construye tus propios dispositivos inteligentes!</strong><br>
+        <a class="reunion" href="../registro.html">Concerta tu reunión informativa aquí</a>
+        <br>
+      </div>
+      <a class="volver" href="../cursos.html">Volver</a>
   </main> 
   <footer>
-    <center>
       <div class="container">
           <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
             <img src="../icons/icon.png" alt="Conquer Devs Icon" height="22">
@@ -124,10 +123,16 @@
           <nav>
             <a href="../aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
-
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+.definiciones{
+  dd{
+    margin: 0;
+  }
+}
+
+.detalles{
+  h2{
+    font-size: 1.2em;
+  }
+  ul{
+    text-align: left;
+    li{
+      font-size: 0.9em;
+    }
+  }
+}
+
+.center{
+  text-align: center;
+}
+.reunion{
+  font-size: 0.9em;
+}
+
+.volver {
+  display: block;
+  margin: 20px auto 20px auto;
+  text-align: center;
+  width: fit-content;
+  
+}

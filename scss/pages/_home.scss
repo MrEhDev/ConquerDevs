@@ -1,0 +1,49 @@
+@use '../_variables' as *;
+
+section{
+  text-align: center;
+  margin: 20px 20px;
+  picture{
+    img{
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 15px;
+      border: 2px solid white;
+    }
+  }
+}
+
+#logo{
+  border: none;
+  max-width: 90%;
+  height: 150px;
+  border-radius: none;
+  box-shadow: none;
+  margin-top: 0px;
+  border: none;
+}
+
+h2{
+  font-size: 1.4em;
+  color: $c-accent;
+  margin: 15px 0 0 0;
+}
+h3{
+  font-size: 1em;
+  color: $c-accent;
+  margin: 10px 0 0 0;
+}
+
+p{
+  font-size: 0.8em;
+  color: $c-ink;
+  margin: 10px 0;
+}
+
+#cursos{
+  font-size: 0.9em;
+}
+

@@ -32,31 +32,31 @@
 
 <body>
   <header>
-    <center>
       <div class="container">
           <hr>
           <picture>
-            <source srcset="img/common/conquer_devs_mob.png" height="120px" media="(max-width:600px)">
-             <img src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+            <source srcset="/img/common/conquer_devs_mob.png" height="150px" media="(max-width:600px)">
+              <img id="logo" src="/img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
           </picture>
-          <nav>
-                | <a href="index.html">Home</a> |
-                | <a href="quienes_somos.html">Quiénes Somos</a> |
-                | <a href="cursos.html">Cursos</a> |
-                | <strong>Blogs</strong> |
-                | <a href="registro.html">Registro</a> |
-                | <a href="login.html">Login</a> |
-                | <a href="contacto.html">Contacto</a> |
-              </ul>
-          </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <nav id="main-nav" class="collapse">
+              <a href="/index.html">Home</a>
+              <a href="quienes_somos.html">Quiénes Somos</a>
+              <a href="/cursos.html">Cursos</a>
+              <a href="/registro.html">Registro</a>
+              <a href="/login.html">Login</a>
+              <a href="/contacto.html">Contacto</a>
+            </nav>
           <hr>
       </div>
       <h1>Nuestras noticias</h1>
-    </center>
   </header>
   <main>
     <section>
-      <center>
         <article>
           <h2>Premio Bett Awards 2024</h2> 
           <picture>
@@ -72,12 +72,10 @@
             <source srcset="img/noticias/clasesvr_mob.png" height="110" media="(max-width:600px)">
             <img src="img/noticias/clasesvr2.png" alt="" height="200">
           </picture><br>
-            <a href="blogs/blog_clases_vr.html">¡Revolucionamos la educación!</a>
-      </center>
+            <a class="volver" href="blogs/blog_clases_vr.html">¡Revolucionamos la educación!</a>
     </section>
   </main> 
   <footer>
-    <center>
       <div class="container">
           <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
             <img src="icons/icon.png" alt="Conquer Devs Icon" height="22">
@@ -85,8 +83,15 @@
           <nav>
             <a href="aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
