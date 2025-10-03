@@ -1,4 +1,5 @@
 @use '../_variables' as *;
+@use '../mixins' as *;
 
 section{
   text-align: center;
@@ -24,6 +25,12 @@ section{
   box-shadow: none;
   margin-top: 0px;
   border: none;
+  @include respond(md) {
+    height: 100px;
+  }
+  @include respond(lg) {
+    height: 150px;
+  }
 }
 
 h2{

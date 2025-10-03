@@ -353,6 +353,11 @@ body {
     padding: 0 60px;
   }
 }
+@media (min-width: 1024px) {
+  main {
+    padding: 0 200px;
+  }
+}
 
 p {
   color: #555;
@@ -451,6 +456,15 @@ header nav a {
     color: #333;
   }
 }
+@media (min-width: 1024px) {
+  header nav a {
+    margin: 0 10px;
+    padding: 5px 10px;
+  }
+  header nav a:not(:last-child)::after {
+    content: none;
+  }
+}
 header nav a:hover {
   border-radius: 5px;
   background-color: #3798c9;
@@ -480,6 +494,24 @@ header p {
   font-size: 1em;
   color: #555;
   margin: 5px 0 15px 0;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0 0;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    margin: 15px 0 5px 0;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5em;
+    margin: 10px 0 0px 0;
+    color: #003267;
+  }
 }
 
 a,
@@ -525,6 +557,16 @@ section picture img {
   box-shadow: none;
   margin-top: 0px;
   border: none;
+}
+@media (min-width: 768px) {
+  #logo {
+    height: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  #logo {
+    height: 150px;
+  }
 }
 
 h2 {
@@ -720,6 +762,11 @@ article > a {
     top: 340px;
   }
 }
+@media (min-width: 1024px) {
+  .contacto {
+    top: 250px;
+  }
+}
 .contacto fieldset {
   border: none;
   margin-bottom: 20px;
@@ -774,6 +821,13 @@ article > a {
 }
 .contacto fieldset textarea {
   resize: vertical;
+}
+
+article {
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  border: 2px solid white;
 }
 
 .hamburger {

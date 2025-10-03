@@ -121,6 +121,9 @@
   @include respond(md) {
     top: 340px;
   }
+  @include respond(lg) {
+    top: 250px;
+  }
   
   fieldset{
     border: none;
@@ -168,4 +171,11 @@
       resize: vertical;
     }
   }
+}
+
+article{
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  border: 2px solid white;
 }

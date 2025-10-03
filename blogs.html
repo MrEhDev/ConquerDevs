@@ -57,22 +57,22 @@
   </header>
   <main>
     <section>
-        <article>
+        <article data-link="blogs/blog_premio_bett.html">
           <h2>Premio Bett Awards 2025</h2> 
           <picture>
             <source srcset="img/noticias/bett_awards.png" height="110" media="(max-width:600px)">
             <img src="img/noticias/bett_awards.png" alt="" height="200">
           </picture><br>
-          <a href="blogs/blog_premio_bett.html">¡Campeones de la Innovación 2025!</a>
+          <a class="volver" href="blogs/blog_premio_bett.html">¡Campeones de la Innovación 2025!</a>
           </article>
-        <article>
-        </article>
+        <article data-link="blogs/blog_clases_vr.html">
         <h2>Nuevas clases en VR</h2>
           <picture>
             <source srcset="img/noticias/clasesvr_mob.png" height="110" media="(max-width:600px)">
             <img src="img/noticias/clasesvr2.png" alt="" height="200">
           </picture><br>
             <a class="volver" href="blogs/blog_clases_vr.html">¡Revolucionamos la educación!</a>
+        </article>
     </section>
   </main> 
   <footer>
@@ -91,6 +91,18 @@
     btn.addEventListener('click', () => {
       nav.classList.toggle('open');
       btn.classList.toggle('active');
+    });
+    function isMobileOrTablet() {
+      return window.matchMedia('(max-width: 1024px)').matches;
+    }
+
+    document.querySelectorAll('article[data-link]').forEach(article => {
+      article.addEventListener('click', function(e) {
+        if (isMobileOrTablet()) {
+          const link = article.querySelector('a');
+          if (link) window.location = link.href;
+        }
+      });
     });
   </script>
 </body>

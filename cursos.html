@@ -57,32 +57,32 @@
         <h1>Nuestros cursos</h1>
   </header>
   <main>
-      <article>
+      <article data-link="cursos/curso_microcontroladores.html">
         <h3>Curso de Programación de Microcontroladores</h3>
         <p>Domina el hardware y crea dispositivos inteligentes</p>
         <picture>
           <source srcset="img/cursos/microcontroladores_mob.png" media="(max-width:600px)">
           <img src="img/cursos/microcontroladores.png" alt="" height="200">
-        </picture> <br>
-        <a href="cursos/curso_microcontroladores.html">Ver más</a>
+        </picture>
+        <a class="button" href="cursos/curso_microcontroladores.html">Ver más</a>
       </article>
-      <article>
+      <article data-link="cursos/curso_vr.html">
         <h3>Curso de Realidad Virtual</h3>
         <p>Crea experiencias inmersivas</p>
         <picture>
           <source srcset="img/cursos/curso-vr_mob.png" media="(max-width:600px)">
           <img src="img/cursos/curso-vr.png" alt="" height="200">
-        </picture> <br>
-        <a href="cursos/curso_vr.html">Ver más</a>
+        </picture>
+        <a class="button" href="cursos/curso_vr.html">Ver más</a>
       </article>
-      <article>
+      <article data-link="cursos/curso_ia_salud.html">
         <h3>Curso de IA para la salud</h3>
         <p>La salud a otro nivel</p>
         <picture>
           <source srcset="img/cursos/ia_salud1_mob.png" media="(max-width:600px)">
           <img src="img/cursos/ia_salud1.png" alt="" height="200">
-        </picture> <br>
-        <a href="cursos/curso_ia_salud.html">Ver más</a>
+        </picture>
+        <a class="button" href="cursos/curso_ia_salud.html">Ver más</a>
       </article>
       <br>
       <div class="center">
@@ -105,6 +105,18 @@
     btn.addEventListener('click', () => {
       nav.classList.toggle('open');
       btn.classList.toggle('active');
+    });
+    function isMobileOrTablet() {
+      return window.matchMedia('(max-width: 1024px)').matches;
+    }
+
+    document.querySelectorAll('article[data-link]').forEach(article => {
+      article.addEventListener('click', function(e) {
+        if (isMobileOrTablet()) {
+          const link = article.querySelector('a');
+          if (link) window.location = link.href;
+        }
+      });
     });
   </script>
 </body>

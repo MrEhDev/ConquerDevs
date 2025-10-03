@@ -27,6 +27,14 @@ header{
         }
       }
 
+      @include respond(lg) {
+        margin: 0 10px;
+        padding: 5px 10px;
+        &:not(:last-child)::after{
+          content: none;
+        }
+      }
+
       &:hover{
         border-radius: 5px;
         background-color: #3798c9;
@@ -59,3 +67,19 @@ header{
   }
 
 }
+
+
+
+  h1{
+    font-size: 1.8em;
+    margin: 0 0;
+    @include respond(md) {
+      font-size: 2.5em;
+      margin: 15px 0 5px 0;
+    }
+    @include respond(lg) {
+      font-size: 2.5em;
+      margin: 10px 0 0px 0;
+      color: $c-accent;
+    }
+  }
