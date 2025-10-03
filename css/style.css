@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Colores base */
 /* Breakpoints */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -309,6 +310,7 @@ template {
   display: none;
 }
 
+/* --- Mixins para los Breakpoints --- */
 /**
  * Set up a decent box model on the root element
  */
@@ -344,6 +346,12 @@ body {
   padding: 0 20px;
   background: #2e2978;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 0 60px;
+  }
 }
 
 p {
@@ -417,21 +425,12 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- Mixins para los Breakpoints --- */
 header {
   padding: 10px 0;
   text-align: center;
 }
 header nav {
   margin-top: 15px;
-}
-header nav strong {
-  border-radius: 5px;
-  background-color: #003267;
-  padding: 5px 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
 }
 header nav a {
   margin: 0 10px;
@@ -443,8 +442,13 @@ header nav a {
 }
 @media (min-width: 768px) {
   header nav a {
-    margin: 0 10px;
+    margin: 0 2px 0 0;
     padding: 0;
+  }
+  header nav a:not(:last-child)::after {
+    content: "·";
+    margin-left: 3px;
+    color: #333;
   }
 }
 header nav a:hover {
@@ -457,6 +461,7 @@ header nav a:hover {
 }
 header h1 {
   font-size: 1.8em;
+  margin: 0 0;
 }
 @media (min-width: 768px) {
   header h1 {
@@ -477,7 +482,8 @@ header p {
   margin: 5px 0 15px 0;
 }
 
-a {
+a,
+.button {
   border-radius: 5px;
   background-color: #3798c9;
   padding: 5px 10px;
@@ -486,7 +492,8 @@ a {
   font-weight: bold;
   margin: 10px 10px;
 }
-a:hover {
+a:hover,
+.button:hover {
   border-radius: 5px;
   background-color: #003267;
   padding: 5px 10px;
@@ -618,6 +625,155 @@ article > a {
   margin: 20px auto 20px auto;
   text-align: center;
   width: fit-content;
+}
+
+.left h1 {
+  margin: 0 0;
+}
+.left h2 {
+  text-align: left;
+}
+
+.registro {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.registro fieldset {
+  border: none;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+.registro fieldset legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+.registro fieldset p {
+  margin-bottom: 15px;
+}
+.registro fieldset p label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+}
+.registro fieldset p input[type=text],
+.registro fieldset p input[type=email],
+.registro fieldset p input[type=tel],
+.registro fieldset p select,
+.registro fieldset p textarea {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+}
+.registro fieldset p input[type=text]:focus,
+.registro fieldset p input[type=email]:focus,
+.registro fieldset p input[type=tel]:focus,
+.registro fieldset p select:focus,
+.registro fieldset p textarea:focus {
+  border-color: #003267;
+  outline: none;
+  box-shadow: 0 0 5px rgba(55, 152, 201, 0.5);
+}
+.registro fieldset p textarea {
+  resize: vertical;
+}
+.registro input[type=submit],
+.registro input[type=reset] {
+  background-color: #3798c9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.registro input[type=submit]:hover,
+.registro input[type=reset]:hover {
+  background-color: #2e7bb4;
+}
+
+.contacto {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+@media (min-width: 768px) {
+  .contacto {
+    top: 340px;
+  }
+}
+.contacto fieldset {
+  border: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: left;
+}
+.contacto fieldset legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+.contacto fieldset label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-top: 20px;
+}
+.contacto fieldset input[type=text],
+.contacto fieldset input[type=email],
+.contacto fieldset input[type=tel],
+.contacto fieldset select,
+.contacto fieldset textarea {
+  display: block;
+  width: 95%;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+}
+@media (min-width: 768px) {
+  .contacto fieldset input[type=text],
+  .contacto fieldset input[type=email],
+  .contacto fieldset input[type=tel],
+  .contacto fieldset select,
+  .contacto fieldset textarea {
+    display: block;
+  }
+}
+.contacto fieldset input[type=text]:focus,
+.contacto fieldset input[type=email]:focus,
+.contacto fieldset input[type=tel]:focus,
+.contacto fieldset select:focus,
+.contacto fieldset textarea:focus {
+  border-color: #003267;
+  outline: none;
+  box-shadow: 0 0 5px rgba(55, 152, 201, 0.5);
+}
+.contacto fieldset textarea {
+  resize: vertical;
 }
 
 .hamburger {

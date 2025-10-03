@@ -8,15 +8,6 @@ header{
   nav{
     margin-top: 15px;
 
-    strong{
-        border-radius: 5px;
-        background-color: $c-accent;
-        padding: 5px 10px;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
     a{
       margin: 0 10px;
       color: #333;
@@ -26,8 +17,14 @@ header{
       background-color: transparent;
 
       @include respond(md) {
-        margin: 0 10px;
+        margin: 0 2px 0 0;
         padding: 0;
+
+        &:not(:last-child)::after{
+          content: '·';
+          margin-left: 3px;
+          color: #333;
+        }
       }
 
       &:hover{
@@ -43,6 +40,7 @@ header{
 
   h1{
     font-size: 1.8em;
+    margin: 0 0;
     @include respond(md) {
       font-size: 2.5em;
       margin: 15px 0 5px 0;

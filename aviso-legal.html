@@ -19,6 +19,8 @@
   <link  rel= "icon"  tipo= "image/png"  tamaños= "32x32"  href= "icons/favicon-32x32.png" > 
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "96x96"  href= "icons/favicon-96x96.png" > 
   <link  rel= "icono"  tipo= "imagen/png"  tamaños= "16x16"  href= "icons/favicon-16x16.png" > 
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link  rel= "manifiesto"  href= "/manifiesto.json" > 
   <meta  nombre= "msapplication-TileColor"  contenido= "#fafafa" > 
   <meta  nombre= "msapplication-TileImage"  contenido= "icons/ms-icon-144x144.png" > 
@@ -29,29 +31,31 @@
 
 <body>
   <header>
-    <center>
       <div class="container">
           <hr>
           <picture>
             <source srcset="img/common/conquer_devs_mob.png" height="120px" media="(max-width:600px)">
-             <img src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
-          </picture>
-          <nav>
-                | <a href="index.html">Home</a> |
-                | <a href="quienes_somos.html">Quiénes Somos</a> |
-                | <a href="cursos.html">Cursos</a> |
-                | <a href="blogs.html">Blogs</a> |
-                | <a href="registro.html">Registro</a> |
-                | <a href="login.html">Login</a> |
-                | <a href="contacto.html">Contacto</a> |
-              </ul>
+            <img id="logo" src="img/common/conquer_devs.png" alt="Conquer Devs Logo" height="78px">
+          </picture> 
+          <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav id="main-nav" class="collapse">
+            <a href="/index.html">Home</a>
+            <a href="/quienes_somos.html">Quiénes Somos</a>
+            <a href="/cursos.html">Cursos</a>
+            <a href="/blogs.html">Blogs</a>
+            <a href="/registro.html">Registro</a>
+            <a href="/login.html">Login</a>
+            <a href="/contacto.html">Contacto</a>
           </nav>
           <hr>
       </div>
     <h1>Aviso Legal</h1>
-    </center>
   </header>
-  <main>
+  <main class="left">
     <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa queesta página web es propiedad de Eleazar DevTech.</p>
 
     <h2>1. Objeto</h2>
@@ -75,21 +79,26 @@
     <h2>7. Legislación aplicable y jurisdicción</h2>
     <p>Las presentes condiciones se regirán por la legislación española. Para cualquier controversia que pudiera surgir, las partes se someten a la jurisdicción de los Juzgados y Tribunales de Barcelona.</p>
 
-    <center><p>Última actualización: 26 de Agosto del 2024</p></center>
+    <p>Última actualización: 03 de Octubre del 2025</p>
   </main>
   <footer>
-    <center>
       <div class="container">
-          <p>&copy; 2024 Conquer Devs. Todos los derechos reservados.
+          <p>&copy; 2025 Conquer Devs. Todos los derechos reservados.
             <img src="icons/icon.png" alt="Conquer Devs Icon" height="22">
           </p>
           <nav>
             <a href="aviso-legal.html">Aviso Legal</a>
           </nav>
-      </div>      
-    </center>
-
+      </div>
   </footer>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
